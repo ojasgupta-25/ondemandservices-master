@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ondemandservices</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ondemandservices is the online tools web application which provdides tools like image resizers , resume maker ,email recoreder,email sender, download free ebooks and so many and peoples can use these apps free. " />
+<meta name="keywords" content=" ondemandservices, free-ebooks, free-resume-maker , email sender , email-recorder">
+<meta name="author" content="shubham gupta">
+<meta name="language" content="english">
+<meta name="robots" content="noodp" />
+<meta name="robots" content="index,follow" />
+<meta name="email" content="shubhamguptaorg@gmail.com" />
+<meta name="copyright" content="ondemandservices">
+<meta name="audience" content="All"/>
+<meta property="og:type" content="Website" />
+<meta name="coverage" content="worldwide"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="{% static 'start/css/bootstrap.min.css' %}">
+       <script src="{% static 'start/css/bootstrap.min.js' %}"></script>
+       <link rel=stylesheet" href="{% static 'start/css/bootstrap-theme.min.css' %}">
+     <link rel="stylesheet" href="{% static 'start/css/custom.css' %}">
+    <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.min.css" />
+<link rel="stylesheet" href="https://www.learncodeonline.in/assets/css/plugins.min.css" />
+
+<style type="text/css">
+
+.footer {
+    position: fixed;
+    padding-top:5px;
+    padding-bottom:5px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #5F5F5F;
+    color: white;
+    text-align: left;
+
+}
+.footer a{color:white; padding:1px;text-decoration:none;}
+.footer a:hover{color:#FF9800;}
+div#line1 span#a {
+  display: inline;
+}
+
+div#line1:hover span#a {
+  display: none;
+}
+
+div#line1 span#b {
+  display: none;
+}
+
+div#line1:hover span#b {
+  display: inline;
+}
+</style>
+
+</head>
+<body>
+<nav class="navbar navbar-inverse" id="234"><!-- start navigation bar -->
+  <div class="container-fluid"><!-- start container fluid of nav -->
+    <div class="navbar-header" id="check"><!-- start navbar header -->
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+      <a class="navbar-brand" href="#">Home</a>
+    </div>
+    <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'free_ebooks:index' %} "><span class="glyphicon glyphicon-book"> Free-ebooks</span></a></li>
+                    <li><a href="{% url 'image_resizer:index' %}"><span class="glyphicon glyphicon-camera">&nbspImage-resizer</span></a></li>
+                    <li><a href="{% url 'bulk_email_sender:index' %}"><span class="glyphicon glyphicon-envelope">&nbspBulk-email-sender</span></a></li>
+                    <li><a href="{% url 'resume_maker:index' %}"><span class="glyphicon glyphicon-th">&nbspResume-maker</span></a></li>
+                     <li><a href="{% url 'email_recorder:index' %}"><span class="glyphicon glyphicon-envelope">&nbspEmail-recorder</span></a></li>
+
+                </ul>
+                <ul class="nav navbar-collapse navbar-right">
+                    {% if user.is_authenticated %}
+                    <script>function changetext(obj,text){ obj.innerText=text;}</script>
+                    <a href="{% url 'logout' %}" > <li><button class="btn btn-success navbar-btn" ><div onmouseover="changetext(this,'logout')" onmouseout="changetext(this,'{{user.username}}')">{{user.username}}</div></button></li></a>
+                    {% else %}
+                    <a href="{% url 'social:begin' 'google-oauth2' %}"><li><button class="btn btn-danger navbar-btn">Login with google</button></li></a>
+                    {% endif %}
+                </ul>
+        <!-- add something in right
+            <ul class="nav navbar-collapse navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-log-in">Login</span></a> </li>
+            </ul>
+               end add something in right -->
+    </div>
+  </div><!-- end container fluid of nav -->
+</nav><!-- end nevigation bar -->
+<div style="clear:both;"></div>
+{% block index %}
+{% endblock%}
+
+
+
+
+
+</body>
+</html>

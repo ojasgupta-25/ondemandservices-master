@@ -1,0 +1,35 @@
+{% extends 'free_ebooks/header.html' %}
+
+{% block index %}
+
+ {% if user.is_authenticated %} <!-- if start -->
+<div class="container"><!-- start container -->
+    <!-- ebook display block-->
+	 <div id="blog" class="row">
+             {% for temp in go %}
+                 <div class="col-md-12 blogShort">
+                     <h1>{{temp.title}}</h1>
+                     <img src="{{temp.image.url}}" height="150" width="150" alt="post img" class="pull-left img-responsive thumb margin10 img-thumbnail">
+
+                         <em>Description:</em>
+                     <article><p>
+                         {{temp.description}}
+                         </p></article>
+                     <a class="btn btn-blog pull-right marginBottom10" href="{{temp.ebook_download.url}}">Download</a>
+                 </div>
+             {% endfor %}
+     </div>
+    <!-- end ebook display bock-->
+</div><!-- end container -->
+   {% else %}
+<!-- jumbotron for alert -->
+<div class="container">
+  <div class="jumbotron">
+    <h1>Please signin first</h1>
+    <p><a href="{% url 'social:begin' 'google-oauth2' %}"><button class="btn btn-danger navbar-btn">Login with google</button></a>.</p>
+  </div>
+</div>
+<!-- end jumbotron alert-->
+   {% endif %}  <!-- end if-->
+
+{% endblock %}

@@ -1,0 +1,194 @@
+{% extends 'resume_maker/header.html'%}
+
+{%block index%}
+<div class="col-sm-2">
+
+</div>
+
+
+
+<div class="col-sm-8">
+    <h4 style="color:red;">This application is under development</h4>
+    <form method="POST"   action="#">
+        {%csrf_token%}
+        <div class="form-group">
+            <!-- row for first name and last name -->
+            <div class="row">
+                <h3>Enter your name</h3>
+                <div class="col-sm-6"><label for="first_name">First name:</label>{{form.first_name}}</div>
+                <div class="col-sm-6"><label for="Last_name">Last name:</label> {{form.last_name}}</div>
+            </div>
+            <!-- end row for first name and last name -->
+            <!-- start row for ccarrer_objectives -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <label for="carrer_objectives">Select carrer_objectives</label>{{form.carrer_objectives}}
+                </div>
+            </div>
+            <!-- end row for carrer_objectives -->
+            <!-- start technical_skills1 row -->
+            <hr>
+            <div class="row">
+                <h3>Enter Technical skills</h3>
+                <div class="col-sm-12"><label for="technical_skills1">Technical skills-1</label> {{form.technical_skills1}} </div>
+            </div>
+             <div class="row">
+                <div class="col-sm-12"><label for="technical_skills2">Technical skills-2</label> {{form.technical_skills1}} </div>
+            </div>
+             <div class="row">
+                <div class="col-sm-12"><label for="technical_skills3">Technical skills-3</label> {{form.technical_skills1}} </div>
+            </div>
+             <div class="row">
+                <div class="col-sm-12"><label for="technical_skills4">Technical skills-4</label> {{form.technical_skills1}} </div>
+            </div>
+             <div class="row">
+                <div class="col-sm-12"><label for="technical_skills5">Technical skills-5</label> {{form.technical_skills1}} </div>
+            </div>
+            <hr>
+            <!-- end technical_skills1 row -->
+            <!-- start eduction deatil row -->
+            <div class="row">
+
+                <div class="container col-sm-12">
+                   <h3>Enter Education Details</h3>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Institue/School</th>
+                            <th>University/School</th>
+                            <th>Score</th>
+                        </tr>
+                        </thead>
+
+
+                        <tbody>
+                        <tr>
+                            <td>{{form.college1}}</td>
+                            <td>{{form.institute1}}</td>
+                            <td>{{form.university1}}</td>
+                            <td>{{form.Score1}}</td>
+                        </tr>
+                        <tr>
+                            <td>{{form.college2}}</td>
+                            <td>{{form.institute2}}</td>
+                            <td>{{form.university2}}</td>
+                            <td>{{form.Score2}}</td>
+                        </tr>
+                        <tr>
+                            <td>{{form.college3}}</td>
+                            <td>{{form.institute3}}</td>
+                            <td>{{form.university3}}</td>
+                            <td>{{form.Score3}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div><!-- -->
+
+            <!-- end educaton detail row -->
+            <!-- start minor prject row -->
+            <hr>
+            <div class="row">
+                <h3>Enter Minor project Detail</h3>
+                <div class="col-sm-12">
+                    <label for="project_name1">Project Title</label>{{form.project_name1}}
+                </div>
+                <div class="col-sm-12">
+                    <label for="project_duration1">Project Duration</label>{{form.project_duration1}}
+                </div>
+                <div class="col-sm-12">
+                    <label for="project_description1">Project Description</label>{{form.project_description1}}
+                </div>
+            </div>
+            <!-- end minor project row -->
+            <!-- start major prject row -->
+            <hr>
+            <div class="row">
+                <h3>Enter Major project Detail</h3>
+                <div class="col-sm-12">
+                    <label for="project_name2">Project Title</label>{{form.project_name2}}
+                </div>
+                <div class="col-sm-12">
+                    <label for="project_duration2">Project Duration</label>{{form.project_duration2}}
+                </div>
+                <div class="col-sm-12">
+                    <label for="project_description2">Project Description</label>{{form.project_description2}}
+                </div>
+            </div>
+            <!-- end major project row -->
+            <!--start  industrial_training row -->
+            <hr>
+            <div class="row">
+                <h3>Enter Industrial training Detail</h3>
+                <div class="col-sm-12">
+                    <label for=" industrial_training">Enter Industrial training Detail</label>{{form.industrial_training}}
+                </div>
+            </div>
+            <!-- end  industrial_training row -->
+            <!-- start personal qualities -->
+            <hr>
+            <div class="row">
+                <h3>Enter personal qualities</h3>
+                <div class="col-sm-12">
+                    <label for="personal_qualities1">Personal quality 1</label>{{form.personal_qualities1}}
+                    <label for="personal_qualities2">Personal quality 2</label>{{form.personal_qualities2}}
+                </div>
+            </div>
+            <!--end personal qualities -->
+
+            <!-- start hobby  -->
+            <hr>
+            <div class="row">
+                <h3>Enter your hobby</h3>
+                <div class="col-sm-12">
+                    <label for="hobby1">Hobby-1</label>{{form.hobby1}}
+                    <label for="hobby2">Hbbby-2</label>{{form.hobby2}}
+                </div>
+            </div>
+            <!--end hobby -->
+                        <!-- start achievements1 -->
+            <hr>
+            <div class="row">
+                <h3>Enter your achievements</h3>
+                <div class="col-sm-12">
+                    <label for="achievements1">Achievements-1</label>{{form.achievements1}}
+                    <label for="achievements2">Achievements-2</label>{{form.achievements2}}
+                </div>
+            </div>
+            <!--end hobby -->
+                                    <!-- start personal profile -->
+            <hr>
+            <div class="row">
+                <h3>Enter personal profile</h3>
+                <div class="col-sm-12">
+                    <label for="father_name">Father name</label>{{form.father_name}}
+                    <label for="mother_name">Mother name</label>{{form.mother_name}}
+                    <label for="dob">Date-Of-Birth</label>{{form.dob}}
+                    <label for="gender">Gender</label>{{form.gender}}
+                    <label for="nationality">Nationality</label>{{form.nationality}}
+                    <label for="status">Status</label>{{form.status}}
+                    <label for="languages">Languages</label>{{form.languages}}
+                </div>
+            </div>
+            <!--end end personal profile-->
+
+
+        </div> <!-- end form group -->
+
+
+        <div class="form-group">
+           <button type="submit" class="btn btn-success">Make</button>
+         </div>
+
+    </form>
+</div>
+
+
+
+<div class="col-sm-2">
+
+</div>
+
+{%endblock%}
